@@ -1,87 +1,125 @@
-💰 Desafio: Controle Financeiro Pessoal com POO
-Crie um sistema de controle financeiro com classes, atributos e métodos que simulem uma carteira virtual.
+# Sistema de Controle Financeiro Pessoal
 
-✅ Objetivos
+Este sistema utiliza os princípios da Programação Orientada a Objetos (POO) em Python para simular uma carteira virtual que permite registrar transações financeiras, categorizá-las, visualizar o histórico e obter um resumo financeiro.
 
-Neste desafio, você vai aplicar os princípios básicos de Programação Orientada a Objetos (POO) em Python para criar um sistema simples de controle financeiro pessoal. A proposta é simular uma carteira virtual que permite registrar transações (entradas e saídas de dinheiro), categorizá-las, visualizar o histórico financeiro e obter um resumo geral com renda, gastos e saldo.
-O foco é praticar:
-Criação de classes e objetos
+---
 
+## Estrutura do Sistema
 
-Uso de atributos e métodos
+### Classe **Transacao**
 
+A **classe Transacao** representa uma transação financeira, com os seguintes atributos e métodos:
 
-Encapsulamento de dados
+#### Atributos:
+- **descricao**: Descrição da transação (por exemplo, "Salário", "Mercado").
+- **valor**: Valor da transação (positivo para entradas, negativo para saídas).
+- **categoria**: Categoria da transação (por exemplo, "Renda", "Alimentação").
+- **data**: Data da transação no formato "DD/MM/AAAA".
 
+#### Métodos:
+- **resumo()**: Retorna uma string no formato: `Descrição | +Valor | Categoria | Data`.
 
-Manipulação de listas
+---
 
+### Classe **Carteira**
 
-Lógica de filtragem e agregação de valores
+A **classe Carteira** simula uma carteira de transações, com os seguintes atributos e métodos:
 
-Classe Transacao:
-Atributos:
+#### Atributos:
+- **transacoes**: Lista de objetos **Transacao**.
 
+#### Métodos:
+- **adicionar(transacao)**: Adiciona uma nova transação à carteira.
+- **exibir_transacoes()**: Exibe todas as transações registradas.
+- **saldo()**: Retorna o saldo total.
+- **filtrar_por_categoria(categoria)**: Exibe transações de uma determinada categoria.
+- **gastos_totais()**: Retorna a soma dos valores negativos (gastos).
+- **renda_total()**: Retorna a soma dos valores positivos (renda).
+- **resumo_geral()**: Imprime o total de transações, renda total, gastos totais e saldo final.
 
-descricao (ex: "Salário", "Mercado")
+---
 
+## Como Executar
 
-valor (positivo para entrada, negativo para saída)
+### Pré-requisitos
 
+- Python 3.x instalado no sistema.
+- Um ambiente de desenvolvimento Python configurado (como Anaconda, PyCharm, VSCode, etc.).
 
-categoria (ex: "Renda", "Alimentação", "Moradia", etc)
+### Passos para Execução
 
+#### 1. Clone o Repositório:
 
-data (string no formato "DD/MM/AAAA")
+Se o código está em um repositório Git, clone-o para a sua máquina:
 
+```bash
+git clone <https://github.com/AleDomici/desafio1---Python.git>
+```
+```bash
+cd <desafio1---Python>
+```
 
-Métodos:
+## 2. Crie um Ambiente Virtual (opcional, mas recomendado):
 
+No terminal, execute os seguintes comandos:
 
-resumo(): retorna uma string no formato:
- "Salário | +2500 | Renda | 10/04/2025"
+```bash
+python -m venv venv
+source venv/bin/activate  # No Windows, use `venv\Scripts\activate`
+```
 
+## 3. Execute o Código:
 
+Crie um arquivo chamado `main.py` ou outro nome de sua escolha e copie o seguinte código para ele:
 
-Classe Carteira:
-Atributos:
-
-
-Lista de transações
-
-
-Métodos:
-
-
-adicionar(transacao): adiciona uma nova transação
-
-
-exibir_transacoes(): mostra todas as transações cadastradas
-
-
-saldo(): retorna o saldo total
-
-
-filtrar_por_categoria(categoria): exibe as transações de uma determinada categoria
-
-
-gastos_totais(): retorna a soma dos valores negativos
-
-
-renda_total(): retorna a soma dos valores positivos
-
-
-resumo_geral(): imprime:
-
-
-Total de transações
-
-
-Renda total
+```python
+```
 
 
-Gastos totais
+## Exemplo de uso
+carteira = Carteira()   
+transacao1 = Transacao("Salário", 2500, "Renda", "10/04/2025")   
+transacao2 = Transacao("Mercado", -500, "Alimentação", "12/04/2025")   
+carteira.adicionar(transacao1)   
+carteira.adicionar(transacao2)   
 
+print("Transações:")   
+carteira.exibir_transacoes()   
 
-Saldo final
+print("\nResumo Geral:")   
+carteira.resumo_geral()   
+
+print("\nFiltrar por categoria 'Alimentação':")   
+for t in carteira.filtrar_por_categoria("Alimentação"):
+    print(t.resumo())    
+
+## 4. Execute o Código:
+No terminal, execute o script com o comando:
+
+```bash
+python main.py
+```
+## Interaja com o Programa
+
+O programa exibirá as transações cadastradas, o resumo geral das finanças e filtrará por categoria conforme configurado no exemplo.
+
+## Exemplo de Saída:
+
+```yaml
+transacoes:
+  - descricao: "Salário"
+    valor: 2500.0
+    categoria: "Renda"
+    data: "10/04/2025"
+  - descricao: "Mercado"
+    valor: -500.0
+    categoria: "Alimentação"
+    data: "12/04/2025"
+
+resumo_geral:
+  total_transacoes: 2
+  renda_total: 2500.0
+  gastos_totais: -500.0
+  saldo_final: 2000.0
+```
 
