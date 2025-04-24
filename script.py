@@ -42,3 +42,15 @@ class Carteira:
         print(f"Renda total: {renda_total}")
         print(f"Gastos totais: {gastos_totais}")
         print(f"Saldo final: {saldo_final}")
+
+def main():
+    carteira = Carteira()
+
+    while True:
+        print("\nMenu de Opções:")
+        print("1. Adicionar Transação")
+        print("2. Exibir Transações")
+        print("3. Resumo Geral")
+        print("4. Filtrar por Categoria")
+        print("5. Sair")
+        escolha = input("Escolha uma opção: ")
