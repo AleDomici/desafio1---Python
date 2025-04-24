@@ -1,7 +1,7 @@
-#💰 Desafio: Controle Financeiro Pessoal com POO
+💰 Desafio: Controle Financeiro Pessoal com POO
 Crie um sistema de controle financeiro com classes, atributos e métodos que simulem uma carteira virtual.
 
-##✅ Objetivos
+✅ Objetivos
 
 Neste desafio, você vai aplicar os princípios básicos de Programação Orientada a Objetos (POO) em Python para criar um sistema simples de controle financeiro pessoal. A proposta é simular uma carteira virtual que permite registrar transações (entradas e saídas de dinheiro), categorizá-las, visualizar o histórico financeiro e obter um resumo geral com renda, gastos e saldo.
 O foco é praticar:
