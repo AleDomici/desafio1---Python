@@ -14,22 +14,31 @@ class Carteira:
     def __init__(self):
         self.transacoes = []
 
-        def adicionar(self, transacao):
-            self.transacoes.append(transacao)
+    def adicionar(self, transacao):
+        self.transacoes.append(transacao)
 
-        def exibir_transacoes(self):
-         for transacao in self.transacoes:
-                print(transacao.resumo())
+    def exibir_transacoes(self):
+        for transacao in self.transacoes:
+            print(transacao.resumo())
 
-        def saldo(self):
-            return sum(transacao.valor for transacao in self.transacoes)
-        
-        def filtrar_por_categoria(self, categoria):
-            return[transacao for transacao in self.transacoes if transacao.categoria == categoria]
-        
-        def gastos_totais(self):
-            return sum(transacao.valor for transacao in self.transacoes if transacao.valor < 0)
-        
-        def renda_total(self):
-            return sum(transacao.valor for transacao in self.transacoes if transacao.valor > 0)
-        
+    def saldo(self):
+        return sum(transacao.valor for transacao in self.transacoes)
+
+    def filtrar_por_categoria(self, categoria):
+        return [transacao for transacao in self.transacoes if transacao.categoria == categoria]
+
+    def gastos_totais(self):
+        return sum(transacao.valor for transacao in self.transacoes if transacao.valor < 0)
+
+    def renda_total(self):
+        return sum(transacao.valor for transacao in self.transacoes if transacao.valor > 0)
+
+    def resumo_geral(self):
+        total_transacoes = len(self.transacoes)
+        renda_total = self.renda_total()
+        gastos_totais = self.gastos_totais()
+        saldo_final = self.saldo()
+        print(f"Total de transações: {total_transacoes}")
+        print(f"Renda total: {renda_total}")
+        print(f"Gastos totais: {gastos_totais}")
+        print(f"Saldo final: {saldo_final}")
